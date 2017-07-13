@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<title>difray unit test</title>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Difray QUnit test</title>
-	<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
-	<script src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
-	<script type="application/javascript" src="./difray.deploy.js"></script>
-</head>
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
 
-<body>
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
-	<script>
-		QUnit.test( "equal test", function( assert ) {
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
 
-			assert.deepEqual( difray( "hello", "world" ), [ ], "should return empty array" );
+		<script type="application/javascript" src="./difray.deploy.js"></script>
+	</head>
 
-			assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ], "should be deeply equal" );
+	<body>
+		<div id="qunit"></div>
 
-			let test1 = difray( [ Array, Object ], [ Array, Object, Object, Date, RegExp ] );
-			assert.deepEqual( test1, [ Date, RegExp ], "should be deeply equal" );
+		<div id="qunit-fixture"></div>
 
-		} );
-	</script>
-</body>
+		<script type="application/javascript">
+			QUnit.test( "difray unit test", function( assert ) {
 
+				assert.deepEqual( difray( "hello", "world" ), [ ], "should return empty array" );
+
+				assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ], "should be deeply equal" );
+				
+			} );
+		</script>
+	</body>
 </html>
