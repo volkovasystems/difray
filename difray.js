@@ -54,8 +54,6 @@
 	@include:
 		{
 			"apiqe": "apiqe",
-			"arid": "arid",
-			"doubt": "doubt",
 			"een": "een",
 			"raze": "raze",
 			"truly": "truly"
@@ -64,8 +62,6 @@
 */
 
 const apiqe = require( "apiqe" );
-const arid = require( "arid" );
-const doubt = require( "doubt" );
 const een = require( "een" );
 const raze = require( "raze" );
 const truly = require( "truly" );
@@ -80,32 +76,14 @@ const difray = function difray( source, target ){
 		@end-meta-configuration
 	*/
 
-	if( !doubt( source, AS_ARRAY ) ){
-		source = [ source ].map( truly );
-	}
+	source = raze( source ).filter( truly );
 
-	if( !doubt( target, AS_ARRAY ) ){
-		target = [ target ].map( truly );
-	}
+	target = raze( target ).filter( truly );
 
-	source = raze( source );
-
-	target = raze( target );
-
-	if( arid( source ) && arid( target ) ){
-		return [ ];
-	}
-
-	if( arid( source ) ){
-		return target;
-	}
-
-	if( arid( target ) ){
-		return source;
-	}
-
-	return apiqe( source.filter( ( element ) => !een( target, element ) ),
-		target.filter( ( element ) => !een( source, element ) ) );
+	return apiqe(
+		source.filter( ( element ) => !een( target, element ) ),
+		target.filter( ( element ) => !een( source, element ) )
+	);
 };
 
 module.exports = difray;

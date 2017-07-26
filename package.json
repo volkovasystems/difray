@@ -1,49 +1,47 @@
 {
-  "name": "difray",
-  "version": "0.2.0",
-  "description": "Array difference.",
-  "main": "difray.js",
-  "support": "difray.support.js",
-  "deploy": "difray.deploy.js",
-  "browser": "difray.browser.js",
-  "scripts": {
-    "build": "babel difray.js --out-file difray.support.js --source-maps && webpack --progress --display-modules",
-    "test": "mocha difray-test.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/volkovasystems/difray.git"
-  },
-  "keywords": [
-    "array",
-    "difference",
-    "difray"
-  ],
-  "author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-  "contributors": [
-    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-    "Vinse Vinalon <vinsevinalon@gmail.com>"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/volkovasystems/difray/issues"
-  },
-  "homepage": "https://github.com/volkovasystems/difray#readme",
-  "dependencies": {
-    "apiqe": "^0.5.0",
-    "arid": "^0.29.0",
-    "babel-runtime": "^6.23.0",
-    "doubt": "^0.30.0",
-    "een": "^0.21.0",
-    "raze": "^0.33.0",
-    "truly": "^0.19.0"
-  },
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.25.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
-    "source-map-loader": "^0.2.1",
-    "webpack": "^3.2.0"
-  }
+	"name": "difray",
+	"version": "0.3.0",
+	"description": "Array difference.",
+	"main": "difray.js",
+	"support": "difray.support.js",
+	"deploy": "difray.deploy.js",
+	"browser": "difray.browser.js",
+	"scripts": {
+		"build": "babel difray.js --out-file difray.support.js --source-maps && webpack --progress --display-modules",
+		"test": "mocha difray-test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/volkovasystems/difray.git"
+	},
+	"keywords": [
+		"array",
+		"difference",
+		"difray"
+	],
+	"author": "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+	"contributors": [
+		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+		"Vinse Vinalon <vinsevinalon@gmail.com>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/volkovasystems/difray/issues"
+	},
+	"homepage": "https://github.com/volkovasystems/difray#readme",
+	"dependencies": {
+		"apiqe": "^0.6.0",
+		"babel-runtime": "^6.23.0",
+		"een": "^0.23.0",
+		"raze": "^0.34.0",
+		"truly": "^0.20.0"
+	},
+	"devDependencies": {
+		"babel-cli": "^6.24.1",
+		"babel-core": "^6.25.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-latest": "^6.24.1",
+		"source-map-loader": "^0.2.1",
+		"webpack": "^3.4.0"
+	}
 }

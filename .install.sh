@@ -1,8 +1,6 @@
 yarn add \
 babel-runtime \
 apiqe \
-arid \
-doubt \
 een \
 raze \
 truly \
@@ -17,8 +15,6 @@ webpack \
 --dev && \
 bower install \
 apiqe \
-arid \
-doubt \
 een \
 raze \
 truly \
