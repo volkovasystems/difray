@@ -6,6 +6,6 @@ assert.deepEqual( difray( "hello", "world" ), [ "hello", "world" ], "should retu
 
 assert.deepEqual( difray( "hello", [ "hello", "world" ] ), [ "world" ], "should return [ 'world' ]" );
 
-assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ], "should be deeply equal" );
+assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ], "should return [ 1, 2, 5, 6 ]" );
 
 console.log( "ok" );
