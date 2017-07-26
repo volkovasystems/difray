@@ -1,6 +1,6 @@
 {
 	"name": "difray",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Array difference.",
 	"main": "difray.deploy.js",
 	"support": "difray.support.js",
@@ -24,7 +24,7 @@
 		"tests"
 	],
 	"dependencies": {
-		"apiqe": "^0.6.0",
+		"apiqe": "^0.7.0",
 		"een": "^0.23.0",
 		"raze": "^0.34.0",
 		"truly": "^0.20.0"

@@ -1,6 +1,6 @@
 {
 	"name": "difray",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Array difference.",
 	"main": "difray.js",
 	"support": "difray.support.js",
@@ -8,7 +8,12 @@
 	"browser": "difray.browser.js",
 	"scripts": {
 		"build": "babel difray.js --out-file difray.support.js --source-maps && webpack --progress --display-modules",
-		"test": "mocha difray-test.js"
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
+		"formal": "jesy apply '*.json'",
+		"pretest": "npm run clear && npm run build",
+		"test": "node difray-test.js",
+		"posttest": "npm run formal"
 	},
 	"repository": {
 		"type": "git",
@@ -30,7 +35,7 @@
 	},
 	"homepage": "https://github.com/volkovasystems/difray#readme",
 	"dependencies": {
-		"apiqe": "^0.6.0",
+		"apiqe": "^0.7.0",
 		"babel-runtime": "^6.23.0",
 		"een": "^0.23.0",
 		"raze": "^0.34.0",
