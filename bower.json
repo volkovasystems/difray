@@ -1,32 +1,32 @@
 {
-  "name": "difray",
-  "version": "0.0.0",
-  "description": "Array difference.",
-  "main": "difray.deploy.js",
-  "support": "difray.support.js",
-  "authors": [
-    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
-  ],
-  "license": "MIT",
-  "keywords": [
-    "array",
-    "difference",
-    "difray"
-  ],
-  "homepage": "https://github.com/volkovasystems/difray",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "apiqe": "^0.7.0",
-    "arid": "^0.30.0",
-    "doubt": "^0.34.0",
-    "een": "^0.23.0",
-    "raze": "^0.34.0",
-    "truly": "^0.20.0"
-  }
+	"name": "difray",
+	"version": "0.0.0",
+	"description": "Array difference.",
+	"main": "difray.deploy.js",
+	"support": "difray.support.js",
+	"authors": [
+		"Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+	],
+	"license": "MIT",
+	"keywords": [
+		"array",
+		"difference",
+		"difray"
+	],
+	"homepage": "https://github.com/volkovasystems/difray",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"apiqe": "^0.7.0",
+		"arid": "^0.30.0",
+		"doubt": "^0.34.0",
+		"een": "^0.23.0",
+		"raze": "^0.34.0",
+		"truly": "^0.20.0"
+	}
 }
