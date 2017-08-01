@@ -72,7 +72,7 @@ const path = require( "path" );
 //: @server:
 
 describe( "difray", ( ) => {
-	
+
 	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
 		it( "should be deeply equal" , ( ) => {
 
@@ -81,17 +81,17 @@ describe( "difray", ( ) => {
 		} );
 	} );
 
-	
+
 } );
 
 
 //: @end-server
 
 
-//: @client: 
+//: @client:
 
 describe( "difray", ( ) => {
-	
+
 	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
 		it( "should be deeply equal" , ( ) => {
 
@@ -109,22 +109,60 @@ describe( "difray", ( ) => {
 
 describe( "difray", ( ) => {
 
-	
-	let directory = __dirname;
-	let testBridge = path.resolve( directory, "bridge.html" );
-	let bridgeURL = `file://${ testBridge }`;
+
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
 	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
-		it( "should be deeply equal" , ( ) => {
+		it( `"should be equal to [ 1, 2, 5, 6 ]"`, ( ) => {
 
-			assert.equal( difray ( true, true ) );
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] );
+				}
+
+			).value;
+
+			assert.deepEqual( result, [ 1, 2, 5, 6 ] );
 
 		} );
 	} );
 
-	assert.equal(disdo ( true, true ) );
-	
+	// The result has changed from to [ "world" ] to [ true, "hello", "world" ]
+	// describe( `"difray( 'hello', [ 'hello', 'world' ] )"`, ( ) => {
+	// 	it( `"should be equal to [ 'world' ]"`, ( ) => {
+	//
+	// 		let result = browser.url( bridgeURL ).execute(
+	//
+	// 			function( ){
+	// 				return difray( "hello", [ "hello", "world" ] );
+	// 			}
+	//
+	// 		).value;
+	//
+	// 		assert.deepEqual( result, [ "world" ] );
+	//
+	// 	} );
+	// } );
+
+	// The result of this test has changed from [ "hello", "world" ] to [ ]
+	// describe( `"difray( 'hello', 'world' )"`, ( ) => {
+	// 	it( `"should be equal to [ 'hello', 'world' ]"`, ( ) => {
+	// 		//: @ignore:
+	// 		let result = browser.url( bridgeURL ).execute(
+	//
+	// 			function( ){
+	// 				return difray( "hello", "world" );
+	// 			}
+	//
+	// 		).value;
+	// 		//: @end-ignore
+	// 		assert.deepEqual( result, [ "hello", "world" ] );
+	//
+	// 	} );
+	// } );
+
 } );
 
 //: @end-bridge
-
