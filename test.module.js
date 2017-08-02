@@ -109,8 +109,6 @@ describe( "difray", ( ) => {
 
 describe( "difray", ( ) => {
 
-
-
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
 	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
@@ -128,6 +126,7 @@ describe( "difray", ( ) => {
 
 		} );
 	} );
+	
 
 	// The result has changed from to [ "world" ] to [ true, "hello", "world" ]
 	// describe( `"difray( 'hello', [ 'hello', 'world' ] )"`, ( ) => {
