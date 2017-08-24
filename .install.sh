@@ -1,8 +1,6 @@
 yarn add \
 babel-runtime \
 apiqe \
-arid \
-doubt \
 een \
 raze \
 truly \
@@ -33,8 +31,6 @@ yargs \
 --dev && \
 bower install \
 apiqe \
-arid \
-doubt \
 een \
 raze \
 truly \
