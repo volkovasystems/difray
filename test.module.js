@@ -104,6 +104,33 @@ describe( "difray", ( ) => {
 
 //: @client:
 
+describe( "difray", ( ) => {
+
+	describe( "`difray( 'hello', 'world' )`", ( ) => {
+		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", "world" ), [ "hello", "world" ] );
+
+		} );
+	} );
+
+	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
+		it( "should be equal to [ 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", [ "hello", "world" ] ), [ "world" ] );
+
+		} );
+	} );
+
+	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
+
+			assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ] );
+
+		} );
+	} );
+
+} );
 
 //: @end-client
 
@@ -116,7 +143,7 @@ describe( "difray", ( ) => {
 
 	describe( "`difray( 'hello', 'world' )`", ( ) => {
 		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -124,7 +151,7 @@ describe( "difray", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ "hello", "world" ] );
 
 		} );
@@ -132,7 +159,7 @@ describe( "difray", ( ) => {
 
 	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
 		it( "should be equal to [ 'world' ]", ( ) => {
-
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
@@ -140,7 +167,7 @@ describe( "difray", ( ) => {
 				}
 
 			).value;
-
+			//: @end-ignore
 			assert.deepEqual( JSON.parse( result ), [ "world" ] );
 
 		} );
