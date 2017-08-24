@@ -1,7 +1,7 @@
 "use strict";
 
 /*;
-	@test-license:
+	@module-license:
 		The MIT License (MIT)
 		@mit-license
 
@@ -25,80 +25,65 @@
 		LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 		OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 		SOFTWARE.
-	@end-test-license
+	@end-module-license
 
-	@test-configuration:
+	@module-configuration:
 		{
 			"package": "difray",
-			"path": "difray/test.module.js",
-			"file": "test.module.js",
-			"module": "test",
+			"path": "difray/difray.js",
+			"file": "difray.js",
+			"module": "difray",
 			"author": "Richeve S. Bebedor",
 			"eMail": "richeve.bebedor@gmail.com",
 			"contributors": [
 				"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
 				"Vinse Vinalon <vinsevinalon@gmail.com>"
 			],
-			"repository": "https://github.com/volkovasystems/difray.git"
+			"repository": "https://github.com/volkovasystems/difray.git",
+			"test": "difray-test.js",
+			"global": true
 		}
-	@end-test-configuration
+	@end-module-configuration
 
-	@test-documentation:
+	@module-documentation:
+		Array difference.
 
-	@end-test-documentation
+		This will get the difference of target from source and vice versa.
+	@end-module-documentation
 
 	@include:
 		{
-			"assert": "should",
-			"difray": "difray"
+			"apiqe": "apiqe",
+			"een": "een",
+			"raze": "raze",
+			"truly": "truly"
 		}
 	@end-include
 */
 
-const assert = require( "should" );
+const apiqe = require( "apiqe" );
+const een = require( "een" );
+const raze = require( "raze" );
+const truly = require( "truly" );
 
-//: @server:
-const difray = require( "./difray.js" );
-//: @end-server
+const difray = function difray( source, target ){
+	/*;
+		@meta-configuration:
+			{
+				"source:required": "[*]",
+				"target:required": "[*]"
+			}
+		@end-meta-configuration
+	*/
 
+	source = raze( source ).filter( truly );
 
+	target = raze( target ).filter( truly );
 
+	return apiqe(
+		source.filter( ( element ) => !een( target, element ) ),
+		target.filter( ( element ) => !een( source, element ) )
+	);
+};
 
-
-//: @server:
-
-describe( "difray", ( ) => {
-
-	describe( "`difray( 'hello', 'world' )`", ( ) => {
-		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
-
-			assert.deepEqual( difray( "hello", "world" ), [ "hello", "world" ] );
-
-		} );
-	} );
-
-	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
-		it( "should be equal to [ 'world' ]", ( ) => {
-
-			assert.deepEqual( difray( "hello", [ "hello", "world" ] ), [ "world" ] );
-
-		} );
-	} );
-
-	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
-		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
-
-			assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ] );
-
-		} );
-	} );
-
-} );
-
-//: @end-server
-
-
-
-
-
-
+module.exports = difray;

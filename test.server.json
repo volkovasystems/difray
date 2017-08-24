@@ -1,32 +1,60 @@
 {
-  "stats": {
-    "suites": 2,
-    "tests": 1,
-    "passes": 1,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-18T01:25:45.031Z",
-    "end": "2017-08-18T01:25:45.038Z",
-    "duration": 7
-  },
-  "tests": [
-    {
-      "title": "should be deeply equal",
-      "fullTitle": "difray \"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )\" should be deeply equal",
-      "duration": 3,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ],
-  "pending": [],
-  "failures": [],
-  "passes": [
-    {
-      "title": "should be deeply equal",
-      "fullTitle": "difray \"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )\" should be deeply equal",
-      "duration": 3,
-      "currentRetry": 0,
-      "err": {}
-    }
-  ]
+	"stats": {
+		"suites": 4,
+		"tests": 3,
+		"passes": 3,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-24T03:39:32.461Z",
+		"end": "2017-08-24T03:39:32.474Z",
+		"duration": 13
+	},
+	"tests": [
+		{
+			"title": "should be equal to [ 'hello', 'world' ]",
+			"fullTitle": "difray `difray( 'hello', 'world' )` should be equal to [ 'hello', 'world' ]",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 'world' ]",
+			"fullTitle": "difray `difray( 'hello', [ 'hello', 'world' ] )` should be equal to [ 'world' ]",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 5, 6 ]",
+			"fullTitle": "difray `difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )` should be equal to [ 1, 2, 5, 6 ]",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to [ 'hello', 'world' ]",
+			"fullTitle": "difray `difray( 'hello', 'world' )` should be equal to [ 'hello', 'world' ]",
+			"duration": 5,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 'world' ]",
+			"fullTitle": "difray `difray( 'hello', [ 'hello', 'world' ] )` should be equal to [ 'world' ]",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to [ 1, 2, 5, 6 ]",
+			"fullTitle": "difray `difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )` should be equal to [ 1, 2, 5, 6 ]",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

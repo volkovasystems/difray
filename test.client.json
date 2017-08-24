@@ -1,0 +1,148 @@
+{
+	"state": {
+		"passed": 3,
+		"failed": 0,
+		"skipped": 0
+	},
+	"start": "2017-08-24T03:39:33.826Z",
+	"end": "2017-08-24T03:40:11.734Z",
+	"capabilities": {
+		"browserName": "chrome",
+		"chromeOptions": {
+			"args": [
+				"disable-gpu",
+				"headless"
+			]
+		},
+		"proxy": null
+	},
+	"host": "127.0.0.1",
+	"port": 4444,
+	"baseUrl": "http://localhost",
+	"framework": "mocha",
+	"mochaOpts": {
+		"timeout": 10000,
+		"ui": "bdd"
+	},
+	"suites": [
+		{
+			"name": "difray",
+			"duration": 0,
+			"start": "2017-08-24T03:40:11.362Z",
+			"tests": [],
+			"hooks": []
+		},
+		{
+			"name": "difray",
+			"duration": 190,
+			"start": "2017-08-24T03:40:11.363Z",
+			"end": "2017-08-24T03:40:11.553Z",
+			"tests": [],
+			"hooks": [
+				{
+					"start": "2017-08-24T03:40:11.364Z",
+					"end": "2017-08-24T03:40:11.364Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 'hello', 'world' ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.455Z",
+					"end": "2017-08-24T03:40:11.455Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 'hello', 'world' ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.456Z",
+					"end": "2017-08-24T03:40:11.456Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 'world' ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.508Z",
+					"end": "2017-08-24T03:40:11.508Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 'world' ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.508Z",
+					"end": "2017-08-24T03:40:11.508Z",
+					"duration": 0,
+					"title": "\"before each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 1, 2, 5, 6 ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.552Z",
+					"end": "2017-08-24T03:40:11.552Z",
+					"duration": 0,
+					"title": "\"after each\" hook",
+					"associatedSuite": "difray",
+					"associatedTest": "should be equal to [ 1, 2, 5, 6 ]"
+				},
+				{
+					"start": "2017-08-24T03:40:11.553Z",
+					"end": "2017-08-24T03:40:11.553Z",
+					"duration": 0,
+					"title": "\"after all\" hook",
+					"associatedSuite": "difray"
+				}
+			]
+		},
+		{
+			"name": "`difray( 'hello', 'world' )`",
+			"duration": 92,
+			"start": "2017-08-24T03:40:11.363Z",
+			"end": "2017-08-24T03:40:11.455Z",
+			"tests": [
+				{
+					"name": "should be equal to [ 'hello', 'world' ]",
+					"start": "2017-08-24T03:40:11.364Z",
+					"end": "2017-08-24T03:40:11.455Z",
+					"duration": 91,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`difray( 'hello', [ 'hello', 'world' ] )`",
+			"duration": 52,
+			"start": "2017-08-24T03:40:11.456Z",
+			"end": "2017-08-24T03:40:11.508Z",
+			"tests": [
+				{
+					"name": "should be equal to [ 'world' ]",
+					"start": "2017-08-24T03:40:11.456Z",
+					"end": "2017-08-24T03:40:11.507Z",
+					"duration": 51,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		},
+		{
+			"name": "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`",
+			"duration": 45,
+			"start": "2017-08-24T03:40:11.508Z",
+			"end": "2017-08-24T03:40:11.553Z",
+			"tests": [
+				{
+					"name": "should be equal to [ 1, 2, 5, 6 ]",
+					"start": "2017-08-24T03:40:11.508Z",
+					"end": "2017-08-24T03:40:11.552Z",
+					"duration": 44,
+					"state": "pass"
+				}
+			],
+			"hooks": []
+		}
+	]
+}
