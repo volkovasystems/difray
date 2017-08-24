@@ -73,6 +73,22 @@ const path = require( "path" );
 
 describe( "difray", ( ) => {
 
+	describe( "`difray( 'hello', 'world' )`", ( ) => {
+		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", "world" ), [ "hello", "world" ] );
+
+		} );
+	} );
+
+	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
+		it( "should be equal to [ 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", [ "hello", "world" ] ), [ "world" ] );
+
+		} );
+	} );
+
 	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
 
@@ -90,6 +106,22 @@ describe( "difray", ( ) => {
 
 describe( "difray", ( ) => {
 
+	describe( "`difray( 'hello', 'world' )`", ( ) => {
+		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", "world" ), [ "hello", "world" ] );
+
+		} );
+	} );
+
+	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
+		it( "should be equal to [ 'world' ]", ( ) => {
+
+			assert.deepEqual( difray( "hello", [ "hello", "world" ] ), [ "world" ] );
+
+		} );
+	} );
+
 	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
 
@@ -106,6 +138,40 @@ describe( "difray", ( ) => {
 //: @bridge:
 
 describe( "difray", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`difray( 'hello', 'world' )`", ( ) => {
+		it( "should be equal to [ 'hello', 'world' ]", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( difray( "hello", "world" ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ "hello", "world" ] );
+
+		} );
+	} );
+
+	describe( "`difray( 'hello', [ 'hello', 'world' ] )`", ( ) => {
+		it( "should be equal to [ 'world' ]", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return JSON.stringify( difray( "hello", [ "hello", "world" ] ) );
+				}
+
+			).value;
+
+			assert.deepEqual( JSON.parse( result ), [ "world" ] );
+
+		} );
+	} );
 
 	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
 		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
