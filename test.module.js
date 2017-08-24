@@ -73,17 +73,15 @@ const path = require( "path" );
 
 describe( "difray", ( ) => {
 
-	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
-		it( "should be deeply equal" , ( ) => {
+	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
 
 			assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ] );
 
 		} );
 	} );
 
-
 } );
-
 
 //: @end-server
 
@@ -92,15 +90,15 @@ describe( "difray", ( ) => {
 
 describe( "difray", ( ) => {
 
-	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
-		it( "should be deeply equal" , ( ) => {
+	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
 
 			assert.deepEqual( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ), [ 1, 2, 5, 6 ] );
 
 		} );
 	} );
-} );
 
+} );
 
 //: @end-client
 
@@ -109,58 +107,21 @@ describe( "difray", ( ) => {
 
 describe( "difray", ( ) => {
 
-	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
-
-	describe( `"difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )"`, ( ) => {
-		it( `"should be equal to [ 1, 2, 5, 6 ]"`, ( ) => {
-
+	describe( "`difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] )`", ( ) => {
+		it( "should be equal to [ 1, 2, 5, 6 ]" , ( ) => {
+			//: @ignore:
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] );
+					return JSON.stringify( difray( [ 1, 2, 3, 4 ], [ 3, 4, 5, 6 ] ) );
 				}
 
 			).value;
-
-			assert.deepEqual( result, [ 1, 2, 5, 6 ] );
+			//: @end-ignore
+			assert.deepEqual( JSON.parse( result ), [ 1, 2, 5, 6 ] );
 
 		} );
 	} );
-	
-
-	// The result has changed from to [ "world" ] to [ true, "hello", "world" ]
-	// describe( `"difray( 'hello', [ 'hello', 'world' ] )"`, ( ) => {
-	// 	it( `"should be equal to [ 'world' ]"`, ( ) => {
-	//
-	// 		let result = browser.url( bridgeURL ).execute(
-	//
-	// 			function( ){
-	// 				return difray( "hello", [ "hello", "world" ] );
-	// 			}
-	//
-	// 		).value;
-	//
-	// 		assert.deepEqual( result, [ "world" ] );
-	//
-	// 	} );
-	// } );
-
-	// The result of this test has changed from [ "hello", "world" ] to [ ]
-	// describe( `"difray( 'hello', 'world' )"`, ( ) => {
-	// 	it( `"should be equal to [ 'hello', 'world' ]"`, ( ) => {
-	// 		//: @ignore:
-	// 		let result = browser.url( bridgeURL ).execute(
-	//
-	// 			function( ){
-	// 				return difray( "hello", "world" );
-	// 			}
-	//
-	// 		).value;
-	// 		//: @end-ignore
-	// 		assert.deepEqual( result, [ "hello", "world" ] );
-	//
-	// 	} );
-	// } );
 
 } );
 
